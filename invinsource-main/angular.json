@@ -1,0 +1,143 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"invinsource": {
+			"projectType": "application",
+			"schematics": {
+				"@schematics/angular:component": {
+					"style": "scss"
+				}
+			},
+			"root": "",
+			"sourceRoot": "src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular-devkit/build-angular:browser",
+					"options": {
+						"outputPath": "dist/invinsource",
+						"index": "src/index.html",
+						"main": "src/main.ts",
+						"polyfills": [
+							"zone.js",
+							"chart.js"
+						],
+						"tsConfig": "tsconfig.app.json",
+						"assets": [
+							"src/favicon.ico",
+							"src/assets"
+						],
+						"styles": [
+							"src/assets/css/icons.css",
+							"./node_modules/ngx-toastr/toastr.css",
+							"./node_modules/ngx-spinner/animations/line-scale-party.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+							"src/assets/plugins/datatable/css/dataTables.bootstrap5.min.css",
+							"src/assets/sass/app.scss",
+							"src/styles.scss"
+						],
+						"scripts": [
+							"node_modules/chart.js/dist/Chart.min.js",
+							"node_modules/apexcharts/dist/apexcharts.min.js",
+							"node_modules/jquery/dist/jquery.min.js",
+							"node_modules/@popperjs/core/dist/umd/popper.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+							"node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+							"node_modules/bootstrap/dist/js/bootstrap.bundle.js",
+							"src/assets/plugins/jvector-map/jquery-jvectormap-2.0.2.min.js",
+							"src/assets/plugins/jvector-map/jquery-jvectormap-world-mill-en.js",
+							"src/assets/plugins/datatable/js/jquery.dataTables.min.js",
+							"src/assets/plugins/datatable/js/dataTables.bootstrap5.min.js",
+							"src/assets/plugins/sparkline-charts/jquery.sparkline.min.js",
+							"src/assets/plugins/morris/js/morris.js",
+							"src/assets/plugins/raphael/raphael-min.js",
+							"src/assets/plugins/chartjs/js/Chart.extension.js",
+							"src/assets/vendor/pace/pace.min.js",
+							"src/assets/plugins/jquery.easy-pie-chart/jquery.easypiechart.min.js",
+							"src/assets/plugins/sparkline-charts/jquery.sparkline.min.js",
+							"src/assets/plugins/jquery-knob/excanvas.js",
+							"src/assets/plugins/jquery-knob/jquery.knob.js",
+							"src/assets/plugins/datatable/js/jquery.dataTables.min.js"
+						]
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{
+									"type": "initial",
+									"maximumWarning": "500kb",
+									"maximumError": "1mb"
+								},
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "2kb",
+									"maximumError": "4kb"
+								}
+							],
+							"outputHashing": "all"
+						},
+						"development": {
+							"buildOptimizer": false,
+							"optimization": false,
+							"vendorChunk": true,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"namedChunks": true,
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.development.ts"
+								}
+							]
+						}
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"options": {
+						"proxyConfig": "src/proxy.conf.json"
+					},
+					"builder": "@angular-devkit/build-angular:dev-server",
+					"configurations": {
+						"production": {
+							"browserTarget": "invinsource:build:production"
+						},
+						"development": {
+							"browserTarget": "invinsource:build:development"
+						}
+					},
+					"defaultConfiguration": "development"
+				},
+				"extract-i18n": {
+					"builder": "@angular-devkit/build-angular:extract-i18n",
+					"options": {
+						"browserTarget": "invinsource:build"
+					}
+				},
+				"test": {
+					"builder": "@angular-devkit/build-angular:karma",
+					"options": {
+						"polyfills": [
+							"zone.js",
+							"zone.js/testing"
+						],
+						"tsConfig": "tsconfig.spec.json",
+						"assets": [
+							"src/favicon.ico",
+							"src/assets"
+						],
+						"styles": [
+							"src/styles.scss"
+						],
+						"scripts": []
+					}
+				}
+			}
+		}
+	},
+	"cli": {
+		"analytics": "bf153fef-d6d4-437f-afd5-57a904917bd6"
+	}
+}
