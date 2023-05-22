@@ -1,0 +1,329 @@
+<section class="login_page_main">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-5 p-5 d-none d-sm-block">
+                <div class="left_img" *ngIf="step==1">
+                    <h1>Kick Start <br> Your Cyber Journey!</h1>
+                    <img src="assets/step1.png">
+                </div>
+                <div class="left_img" *ngIf="step==2">
+                    <h1>Document <br> the Mutual Trust</h1>
+                    <img src="assets/step2.png">
+                </div>
+                <div class="left_img" *ngIf="step==3">
+                    <h1>Validate <br>Your Credibility</h1>
+                    <img src="assets/step3.png">
+                </div>
+                <div class="left_img" *ngIf="step==4">
+                    <h1>Validate Your <br> Aptitude and Attitude</h1>
+                    <img src="assets/step4.png">
+                </div>
+                <div class="left_img" *ngIf="step==5">
+                    <h1>Choose Your Cyber <br> Skills and Knowledge</h1>
+                    <img src="assets/step5.png">
+                </div>
+                <div class="left_img" *ngIf="step==6">
+                    <h1>Thank <br> You</h1>
+                    <img src="assets/step6.png">
+                </div>
+            </div>
+
+            <div class="col-lg-7 p-5 ">
+                <div class="right-side right_form_main steps_1" style="padding: 30px;">
+                    <div class="right_form_inside">
+                        <div class="row">
+                            <div class="col-lg-3 d-none d-sm-block align-self-center">
+                                <div class="left-side">
+                                    <!-- <div class="steps-content">
+                            <h3>Step <span class="step-number">{{step}}</span></h3>
+                            <p [ngClass]="step==1 ? 'active ' : 'd-none'" class="step-number">Enter your personal information to get closer to companies.</p>
+                            <p [ngClass]="step==2 ? 'active ' : 'd-none'" class="step-number">Accept NDA for compliance, security of client data, assets.</p>
+                            <p [ngClass]="step==3 ? 'active ' : 'd-none'" class="step-number">Help usto know you better by telling about your past work experiences.</p>
+                            <p [ngClass]="step==4 ? 'active ' : 'd-none'" class="step-number">Following are tests which you would receive in your email which is mandatory to complete.</p>
+                            <p [ngClass]="step==5 ? 'active ' : 'd-none'" class="step-number">Which are the area where you feel you can effectively contribute.</p>
+                            <p [ngClass]="step==6 ? 'active ' : 'd-none'" class="step-number">Confirmation.</p>
+                          </div> -->
+                                    <div class="steps_number">
+                                        <ul class="list-unstyled">
+                                            <!-- <li [ngClass]="step>=1 ? 'active ' : ''">Account Information</li>
+                              <li [ngClass]="step>=2 ? 'active ' : ''">Sign NDA</li>
+                              <li [ngClass]="step>=3 ? 'active ' : ''">Work Experience</li>
+                              <li [ngClass]="step>=4 ? 'active ' : ''">Test Details</li>
+                              <li [ngClass]="step>=5 ? 'active ' : ''">Technical Details</li>
+                              <li [ngClass]="step>=6 ? 'active ' : ''">Confirmation</li> -->
+                                            <li [ngClass]="{'in_progress':step==1, 'step_completed':step>1}">
+                                                <h6>Step 1</h6>
+                                                <span *ngIf="step==1">In Progress</span>
+                                                <span *ngIf="step>1">Completed</span>
+                                            </li>
+                                            <li [ngClass]="{'in_progress':step==2, 'step_completed':step>2}">
+                                                <h6>Step 2</h6>
+                                                <span *ngIf="step==2">In Progress</span>
+                                                <span *ngIf="step>2">Completed</span>
+                                            </li>
+                                            <li [ngClass]="{'in_progress':step==3, 'step_completed':step>3}">
+                                                <h6>Step 3</h6>
+                                                <span *ngIf="step==3">In Progress</span>
+                                                <span *ngIf="step>3">Completed</span>
+                                            </li>
+                                            <li [ngClass]="{'in_progress':step==4, 'step_completed':step>4}">
+                                                <h6>Step 4</h6>
+                                                <span *ngIf="step==4">In Progress</span>
+                                                <span *ngIf="step>4">Completed</span>
+                                            </li>
+                                            <li [ngClass]="{'in_progress':step==5, 'step_completed':step>5}">
+                                                <h6>Step 5</h6>
+                                                <span *ngIf="step==5">In Progress</span>
+                                                <span *ngIf="step>5">Completed</span>
+                                            </li>
+                                            <li [ngClass]="{'in_progress':step==6, 'step_completed':step>6}">
+                                                <h6>Finish</h6>
+                                                <span *ngIf="step==6">Completed</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-9 px-lg-0">
+                                <form [formGroup]="personalDetails" id="msform">
+                                    <fieldset *ngIf="step == 1">
+                                        <div [ngClass]="step>=1 ? 'active ' : ''" class="main">
+                                            <small><i class="fa fa-smile-o"></i></small>
+                                            <div class="">
+                                                <h3 class="form_tital">Account Information</h3>
+                                            </div>
+                                            <div class="form_top_text">
+                                                <p>Enter your account information to get closer to companies.</p>
+                                            </div>
+
+                                            <div class="right_form_inside">
+                                                <div class="form-group formfield">
+                                                    <input formControlName="name" type="text" required require
+                                                        id="name">
+                                                    <label for="name" placeholder="">Full Name</label>
+                                                </div>
+                                                <div class="form-group formfield">
+                                                    <input type="text" id="phone" required require
+                                                        formControlName="phone">
+                                                    <label for="phone" placeholder="">Phone Number</label>
+                                                </div>
+                                                <div class="form-group formfield">
+                                                    <input type="text" required require formControlName="email"
+                                                        id="email">
+                                                    <label for="email" placeholder="">Email</label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input type="checkbox" formControlName="terms" class="form-check-input" id="terms">
+                                                    <label class="form-check-label" for="terms">Please confirm that you agree to our <a href="https://www.infopercept.com/privacy-policy" target="_blank">terms & conditions</a></label>
+                                                  </div>
+
+                                                <div class="buttons">
+                                                    <button (click)="next()" class="btn btn-primary">Next Step</button>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                                <form [formGroup]="ndaDetails" id="msform">
+                                    <fieldset *ngIf="step == 2">
+                                        <div [ngClass]="step == 2 ? 'active ' : ''" class="main">
+                                            <small><i class="fa fa-smile-o"></i></small>
+                                            <div class="">
+                                                <h3 class="form_tital">NDA</h3>
+                                            </div>
+                                            <div class="form_top_text">
+                                                <p>Please accept Non-Disclosure Agreement (NDA).</p>
+                                            </div>
+                                            <div class="text">
+                                                <div class="nda_policy_text">
+                                                    <p>A Non-Disclosure Agreement (NDA) is a legal contract between two
+                                                        or more parties that
+                                                        outlines confidential material, knowledge, or information that
+                                                        the parties wish to share
+                                                        with each other for certain purposes but want to keep
+                                                        confidential. The NDA aims to protect
+                                                        the confidential information and prevent its unauthorized use or
+                                                        disclosure by the
+                                                        recipient.</p>
+                                                    <p>The NDA can be unilateral, where only one party discloses
+                                                        information, or mutual, where
+                                                        both parties exchange confidential information. The agreement
+                                                        typically defines the scope of
+                                                        the confidential information, the duration of the agreement, and
+                                                        the consequences of
+                                                        breaching the agreement.</p>
+                                                    <p>The NDA can be unilateral, where only one party discloses
+                                                        information, or mutual, where
+                                                        both parties exchange confidential information. The agreement
+                                                        typically defines the scope of
+                                                        the confidential information, the duration of the agreement, and
+                                                        the consequences of
+                                                        breaching the agreement.</p>
+                                                </div>
+                                            </div>
+                                            <div class="input-text">
+                                                <div class="input-div">
+                                                    <input class="form-check-input" type="checkbox" formControlName="nda" id="nda" name="nda" required>
+                                                    <label for="nda">I agree</label>
+                                                </div>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="save_next_btn">
+                                                <button (click)="previous()" class="btn btn-secondary">Back</button>
+                                                <button (click)="next()" class="btn btn-primary">Next Step</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                                <form [formGroup]="workDetails" id="msform">
+                                    <fieldset *ngIf="step == 3">
+                                        <div [ngClass]="step == 3 ? 'active ' : ''" class="main">
+                                            <small><i class="fa fa-smile-o"></i></small>
+                                            <div class="">
+                                                <h3 class="form_tital">Work Experience</h3>
+                                            </div>
+                                            <div class="form_top_text">
+                                                <p>Can you talk about your past work experience or not applicable?</p>
+                                            </div>
+                                            <div class="input-text">
+                                                <div class="input-div">
+                                                    <textarea style="width
+                                                    :-webkit-fill-available" rows="10" formControlName="work_experience"
+                                                        required require
+                                                        placeholder="Please give us brief about your work experience or mention not applicable."></textarea>
+                                                </div>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="save_next_btn">
+                                                <button (click)="previous()" class="btn btn-secondary">Back</button>
+                                                <button (click)="next()" class="btn btn-primary">Next Step</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                                <form [formGroup]="testDetails" id="msform">
+                                    <fieldset *ngIf="step == 4">
+                                        <div [ngClass]="step == 4 ? 'active ' : ''" class="main">
+                                            <small><i class="fa fa-smile-o"></i></small>
+                                            <div class="">
+                                                <h3 class="form_tital">Test Details</h3>
+                                            </div>
+                                            <div class="form_top_text">
+                                                <p>You will get an email with details of your assessment test.</p>
+                                            </div>
+
+                                            <div class="form-check hr_interview">
+                                                <label class="form-check-label" for="bg">
+                                                    <h5>Background Test <span>A due deligence test, which assesses your
+                                                            journey.</span></h5>
+                                                </label>
+                                                <input type="checkbox" id="bg" class="form-check-input"
+                                                    formControlName="bg_test" required require>
+                                            </div>
+                                            <div class="form-check hr_interview">
+                                                <label class="form-check-label" for="aptitude">
+                                                    <h5>Aptitude Test <span>A test of your abilities to perform under
+                                                            various
+                                                            circumstances.</span></h5>
+                                                </label>
+                                                <input type="checkbox" id="aptitude" class="form-check-input"
+                                                    formControlName="apt_test" required require>
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="save_next_btn">
+                                                <button (click)="previous()" class="btn btn-secondary">Back</button>
+                                                <button (click)="next()" class="btn btn-primary">Next Step</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                                <form [formGroup]="technicalDetails" id="msform">
+                                    <fieldset *ngIf="step == 5">
+                                        <div [ngClass]="step == 5 ? 'active ' : ''" class="main">
+                                            <small><i class="fa fa-smile-o"></i></small>
+                                            <div class="">
+                                                <h3 class="form_tital">Technical Details</h3>
+                                            </div>
+                                            <div class="form_top_text">
+                                                <p>Our expert team will conduct your interview, based on your selection
+                                                    area where you can
+                                                    effectively contribute.</p>
+                                            </div>
+
+
+                                            <div class="form-check hr_interview">
+                                                <label class="form-check-label" for="complaince">
+                                                    <h5>Compliance</h5>
+                                                </label>
+                                                <input type="checkbox" class="form-check-input" id="compliance"
+                                                    formControlName="compliance">
+                                            </div>
+                                            <div class="form-check hr_interview">
+                                                <label class="form-check-label" for="offensive">
+                                                    <h5>Offensive</h5>
+                                                </label>
+                                                <input type="checkbox" class="form-check-input" id="offensive"
+                                                    formControlName="offensive">
+                                            </div>
+                                            <div class="form-check hr_interview">
+                                                <label class="form-check-label" for="defensive">
+                                                    <h5>Defensive</h5>
+                                                </label>
+                                                <input type="checkbox" class="form-check-input" id="defensive"
+                                                    formControlName="defensive">
+                                            </div>
+                                            <div class="form-check hr_interview">
+                                                <label class="form-check-label" for="devsecops">
+                                                    <h5>DevSecOps</h5>
+                                                </label>
+                                                <input type="checkbox" class="form-check-input" id="devsecops"
+                                                    formControlName="devsecops">
+                                            </div>
+
+                                            <hr>
+
+                                            <div class="save_next_btn">
+                                                <button (click)="previous()" class="btn btn-secondary">Back</button>
+                                                <button (click)="submit()" class="btn btn-primary">Submit</button>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </form>
+
+                                <div>
+                                    <fieldset *ngIf="step == 6">
+                                        <div [ngClass]="step == 6 ? 'active ' : ''" class="main">
+                                            <div class="text congrats">
+                                                <h2>Congratulations!</h2>
+                                                <p>Thank You, upon submission of this
+                                                    information, we will create your Invinsource profile</p>
+                                                <p>
+                                                    Email provided would be used for the future reference we will
+                                                    contact you soon.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

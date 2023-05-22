@@ -1,0 +1,10 @@
+<section class="invinsource_top_head">
+	<div class="container-fluid">
+		<a routerLink="/">
+			<img src="assets/logo.png">
+		</a>
+		<a *ngIf="isNotLoggedIn" class="float-end link-light" routerLink="/signup">Signup</a>
+		<a *ngIf="isNotLoggedIn" class="float-end link-light" routerLink="/login">Login</a>
+		<a *ngIf="!isNotLoggedIn" (click)="logout()" class="pointer float-end link-light">Logout</a>
+	</div>
+</section>

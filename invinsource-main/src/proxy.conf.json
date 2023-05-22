@@ -1,0 +1,11 @@
+{
+  "/api/*": {
+    "target": "https://5t6sodxm5d.execute-api.ap-south-1.amazonaws.com/dev/api",
+    "secure": true,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}

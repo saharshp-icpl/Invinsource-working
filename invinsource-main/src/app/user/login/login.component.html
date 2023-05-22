@@ -1,0 +1,47 @@
+<section class="login_page_main">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-lg-6 p-5 d-none d-sm-block">
+                <div class="left_img">
+                    <h1>Explore Interesting <br> Cyber Projects</h1>
+                    <img src="assets/login.png">
+                </div>
+            </div>
+            <div class="col-lg-6 p-3">
+                <div class="right_form_main">
+                    <div class="form_top_text">
+                        <div>
+                            <h2>Login to your <br>Invinsource account</h2>
+                        </div>
+                    </div>
+                    <div class="right_form_inside">
+                        <h3 class="form_tital">Log In</h3>
+                        <form [formGroup]="loginForm" id="msform" autocomplete="off
+                        ">
+                            <div class="form-group formfield">
+                                <input type="text" formControlName="email" name="" id="email" required value=""
+                                    autocomplete="off
+                                ">
+                                <label for="email" placeholder="">Email</label>
+                            </div>
+
+                            <div class="form-group formfield">
+                                <input type="password" formControlName="password" name="" id="password" required
+                                    value="" autocomplete="off
+                                ">
+                                <label for="password" placeholder="">Password</label>
+                            </div>
+                            <hr>
+                            <div class="float-start">
+                                <a routerLink="/forgot-password">Forgot Password?</a>
+                            </div>
+                            <div>
+                                <button (click)="login()" type="submit" class="btn btn-primary">Log in</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
